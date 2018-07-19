@@ -36,10 +36,10 @@
             </div>
         </nav>
         <section class="container searchSection">
-            <form class=" searchForm row form-inline active-cyan-3 active-cyan-4 ml-5">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <input id="searchBar" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search For a Movie" aria-label="Search">
-            </form>
+                <form class="searchForm form-inline active-cyan-4 ml-5">
+                        <input class="form-control form-control-sm mr-3 w-75" id="searchBar" type="text" placeholder="Search" aria-label="Search">
+                        <a href="#" id="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </form>
             <ul id="searchResult" class="gridList">
 
             </ul>
@@ -47,12 +47,12 @@
     </header>
     <main class=" container mainSection">
             <h4 id="searchHeader" class="pt-2">Search Result</h4>
-            <h4 id="popularMovies" class="pt-2">Popular Movies</h4>
-        <div class="SearchMoviesContainer row d-flex flex-column flex-md-row" id="searchedMovies">
+        <div class="SearchMoviesContainer row" id="searchedMovies">
                
 
-            </div>
-        <div class="PopulaMoviesContainer row d-flex flex-column flex-md-row" id="popMovieSec">
+        </div>
+        <h4 id="popularMovies" class="pt-2">Popular Movies</h4>
+        <div class="PopulaMoviesContainer row" id="popMovieSec">
           
 
            
@@ -102,32 +102,44 @@
 
     </main>
     <section class="container mt-5">
-        <div class="collection d-flex flex-row row">
-            <div class="Action col-4">
-                <div class="listHeader d-flex flex-row">
-                    <h3 class="ml-5">Action</h3>
-                    <a href="#" id="actionLink" class="ml-5 mt-2">View All</a>
-                </div>
+        <div class="collection row">
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                        <div class="row">
+                            <div class="col-xs-6">
+                            <h3 class="ml-5">Action</h3>
+                            </div>
+                        <div class="col-xs-6 ml-5 mt-2">
+                         <a href="#" id="actionLink">View All</a>
+                         </div>
+                        </div>
                 <ul id="ActionList">
 
                 </ul>
 
             </div>
-            <div class="Adventure col-4">
-                <div class="listHeader d-flex flex-row">
-                    <h3 class="ml-5">Adventure</h3>
-                    <a href="#" id="adventureLink" class="ml-5 mt-2">View All</a>
-                </div>
+            <div class="Adventure col-xs-12 col-md-6 col-lg-4">
+                    <div class="row">
+                            <div class="col-xs-6">
+                            <h3 class="ml-5">Adventure</h3>
+                            </div>
+                            <div class="col-xs-6 ml-5 mt-2">
+                             <a href="#" id="adventureLink">View All</a>
+                             </div>
+                        </div>
                 <ul id="AdventureList">
 
                 </ul>
 
             </div>
-            <div class="Comic col-4">
-                <div class="listHeader d-flex flex-row">
-                    <h3 class="ml-5">Comic</h3>
-                    <a href="#" id="comicLink" class="ml-5 mt-2">View All</a>
-                </div>
+            <div class="Comic col-xs-12 col-md-6 col-lg-4">
+                    <div class="row">
+                        <div class="col-xs-6">
+                        <h3 class="ml-5">Comic</h3>
+                        </div>
+                        <div class="col-xs-6 ml-5 mt-2">
+                         <a href="#" id="comicLink">View All</a>
+                         </div>
+                    </div>
                 <ul id="ComicList">
 
                 </ul>

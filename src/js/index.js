@@ -14,21 +14,21 @@ window.onload =function(){
     const pageNUmber =1;
     getPopularMovies(pageNUmber); 
     console.log("Popular Movies has been Displayed ");
-    var home = document.getElementById("home");
-    if(home !=null){
-        home.addEventListener("click",function(){
-            console.log("Home page displayed");
-            getPopularMovies(pageNUmber); 
-        },false);
-    }
+    // var home = document.getElementById("home");
+    // if(home !=null){
+    //     home.addEventListener("click",function(){
+    //         console.log("Home page displayed");
+    //         getPopularMovies(pageNUmber); 
+    //     },false);
+    // }
   
-    var compName = document.getElementById("compName");
-    if(compName !=null){
-        compName.addEventListener("click",function(){
-            console.log("Home page displayed");
-            getPopularMovies(pageNUmber); 
-        },false);
-    }
+    // var compName = document.getElementById("compName");
+    // if(compName !=null){
+    //     compName.addEventListener("click",function(){
+    //         console.log("Home page displayed");
+    //         getPopularMovies(pageNUmber); 
+    //     },false);
+    // }
   
     getAllMoviewCollection();
     console.log("All collections has been Displayed ");
@@ -91,6 +91,13 @@ window.onload =function(){
             console.log(" enter is pressed");
             displayAllSearchedResult();
         }
+       
+    },false);
+
+    let searchIcon = document.getElementById("searchIcon");
+    searchIcon.addEventListener("click",function(e){
+            console.log(" search icon is clicked");
+            displayAllSearchedResult();
        
     },false);
   

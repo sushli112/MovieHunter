@@ -50,7 +50,8 @@ function createMovieDetailElements(moviesList,sequenceId,displayType)
   
     let movie = moviesList[sequenceId];
     console.log("Sequence:"+sequenceId+"detail :"+ movie);
-    let card = document.createElement('div'),
+    let column = document.createElement('div'),
+        card = document.createElement('div'),
         row = document.createElement('div'),
         img = document.createElement('img'),
         cardBody = document.createElement('div'),
@@ -92,7 +93,8 @@ function createMovieDetailElements(moviesList,sequenceId,displayType)
     // })
     viewMore.classList.add("view-more")
     row.classList.add("row");
-    card.classList.add("card", "col-lg-5", "col-md-12", "col-sm-12","col-xs-12","mr-1","ml-5","mb-4","mainCard");
+    card.classList.add("card", "mainCard");
+    column.classList.add("col-xs-12", "col-lg-6", "mb-3");
 
     cardBody.appendChild(h5);
     cardBody.appendChild(h6);
@@ -113,10 +115,9 @@ function createMovieDetailElements(moviesList,sequenceId,displayType)
     row.appendChild(img);
     row.appendChild(cardBody);
     card.appendChild(row);
+    column.appendChild(card);
 
-
-
-    currentTobeDisplayedListId.appendChild(card); //appending list to ul tag
+    currentTobeDisplayedListId.appendChild(column); //appending list to ul tag
 
     button.onclick = function() {
       console.log('to open the modal popup');

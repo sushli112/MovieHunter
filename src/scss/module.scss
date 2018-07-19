@@ -1,0 +1,41 @@
+header{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.view-more{
+    border-top: 1px solid #e3e3e3;
+    position: absolute;
+}
+.navbar{
+    background-color: #081c24;
+    }
+    .navbar-brand,.nav-link
+    {
+    color:white;
+    }
+    .searchForm{
+        background-color: #fff;
+    }
+    
+    .form-control{
+    border :none;
+    }
+    .searchSection{
+    width :100%;
+    background-color: #fff;
+    border-bottom: 1px solid #dedede;
+    }
+
+.mainSection{
+    margin-top :6rem;
+    position: relative;
+    }
+    .collImage{
+        height:100px;
+        }
+        .collectionCard{
+        margin-top: 1rem;
+        }

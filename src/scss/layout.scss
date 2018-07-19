@@ -1,0 +1,35 @@
+footer {
+    color: white; 
+
+    background-image: url(https://www.themoviedb.org//static_cache/v4/footers_v2/TheBreakfastClub-b6e6bf8….jpg), radial-gradient(at 30% top, rgba(7, 64, 52, 1) 0%, rgba(8, 28, 36, 1) 70%);
+height: 300px;
+    box-sizing: border-box;
+    padding: 0;
+    background-image: radial-gradient(at 30% top, #074034 0%, #081c24 70%);
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+    
+  .footerList{
+    display:grid;
+  }
+
+  #previous{
+    display:none;
+    }
+#searchHeader{
+    display: none;
+}
+
+#exampleModal{
+width :1200px;
+}
+.popup-content{
+width: 700px;
+}
+#inlineFormCustomSelect{
+width:200px;
+}

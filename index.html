@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+        MovieHunter
+    </title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" id ="compName" href="#">
+                MovieHunter
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" id="home">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <button type="submit" class="btn btn-secondary ml-2" data-toggle="modal" data-target="#modalLoginForm">Login</button>
+                <button type="submit" class="btn btn-secondary ml-2" data-toggle="modal" data-target="#modalSignupForm">SignUp</button>
+            </div>
+        </nav>
+        <section class="container searchSection">
+            <form class=" searchForm row form-inline active-cyan-3 active-cyan-4 ml-5">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="searchBar" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search For a Movie" aria-label="Search">
+            </form>
+            <ul id="searchResult" class="gridList">
+
+            </ul>
+            <section>
+    </header>
+    <main class=" container mainSection">
+            <h4 id="searchHeader" class="pt-2">Search Result</h4>
+            <h4 id="popularMovies" class="pt-2">Popular Movies</h4>
+        <div class="SearchMoviesContainer row d-flex flex-column flex-md-row" id="searchedMovies">
+               
+
+            </div>
+        <div class="PopulaMoviesContainer row d-flex flex-column flex-md-row" id="popMovieSec">
+          
+
+           
+        </div>
+        <button class="btn btn-secondary float-left ml-5" id="previous">Previous</button>
+        <button class="btn btn-secondary float-right" id="next">Next</button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="popup-content">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Movie Detail</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="card d-flex flex-row mainCard">
+                        <img class="card-img-left" id ="popupImg" alt="Card image cap">
+                        <div class="card-body" id="info">
+							<div id="title">
+                            <h5 class="card-title" id="movieTttle"></h5>
+                            <h6 class="card-subtitle mb-2 text-muted" id="movieRelDate"></h6>
+							</div>
+                            <p class="card-text" id="movieDesc">
+                            </p>
+							 <label data-error="wrong" data-success="right" for="inlineFormCustomSelect">Select Your List</label>
+							   <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option selected>Choose...</option>
+								<option value="action">Action</option>
+								<option value="adventure">Adventure</option>
+								<option value="comic">Comic</option>
+							  </select>
+                        </div>
+                    </div>
+					  
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" id="add" class="btn btn-primary">Add</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+    </main>
+    <section class="container mt-5">
+        <div class="collection d-flex flex-row row">
+            <div class="Action col-4">
+                <div class="listHeader d-flex flex-row">
+                    <h3 class="ml-5">Action</h3>
+                    <a href="#" id="actionLink" class="ml-5 mt-2">View All</a>
+                </div>
+                <ul id="ActionList">
+
+                </ul>
+
+            </div>
+            <div class="Adventure col-4">
+                <div class="listHeader d-flex flex-row">
+                    <h3 class="ml-5">Adventure</h3>
+                    <a href="#" id="adventureLink" class="ml-5 mt-2">View All</a>
+                </div>
+                <ul id="AdventureList">
+
+                </ul>
+
+            </div>
+            <div class="Comic col-4">
+                <div class="listHeader d-flex flex-row">
+                    <h3 class="ml-5">Comic</h3>
+                    <a href="#" id="comicLink" class="ml-5 mt-2">View All</a>
+                </div>
+                <ul id="ComicList">
+
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="footerList">
+                        <li>
+                            <h4>THE BASICS</h4>
+                        </li>
+                        <li>About TMDb</li>
+                        <li>Support Forums</li>
+                        <li>API</li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footerList">
+                        <li>
+                            <h4>GET INVOLVED</h4>
+                        </li>
+                        <li>* Contribution Bible</li>
+                        <li>3rd Party Application</li>
+                        <li>Add New Movie</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footerList">
+                        <li>
+                            <h4>COMMUNITY</h4>
+                        </li>
+                        <li>Guidlines</li>
+                        <li>Leaderboard</li>
+                        <li>Forums</li>
+                        <li>Twitter</li>
+                        <li>Facebook</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footerList">
+                        <li>
+                            <h4>LEGAL</h4>
+                        </li>
+                        <li>Terms Of Use</li>
+                        <li>Privacy Policy</li>
+                        <li>Forums</li>
+                        <li>Twitter</li>
+                        <li>Facebook</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="bundle.js"></script>
+</body>
+
+
+</html>

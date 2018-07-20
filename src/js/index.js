@@ -14,11 +14,11 @@ window.onload =function(){
     const pageNUmber =1;
     getPopularMovies(pageNUmber); 
     console.log("Popular Movies has been Displayed ");
-    var home = document.getElementById("home");
+    let home = document.getElementById("home");
     if(home !=null){
         home.addEventListener("click",function(){
             console.log("Home page displayed");
-            var popularMovies =  document.getElementById("popularMovies");
+            let popularMovies =  document.getElementById("popularMovies");
             if(popularMovies !==null){
               popularMovies.innerHTML="Popular Moviess";
             }
@@ -26,11 +26,11 @@ window.onload =function(){
         },false);
     }
   
-    var compName = document.getElementById("compName");
+    let compName = document.getElementById("compName");
     if(compName !=null){
         compName.addEventListener("click",function(){
             console.log("Home page displayed");
-            var popularMovies =  document.getElementById("popularMovies");
+            let popularMovies =  document.getElementById("popularMovies");
             if(popularMovies !==null){
               popularMovies.innerHTML="Popular Moviess";
             }
@@ -40,58 +40,58 @@ window.onload =function(){
   
     getAllMoviewCollection();
     console.log("All collections has been Displayed ");
-    var next = document.getElementById("next");
+    let next = document.getElementById("next");
     next.addEventListener("click",function(){
         console.log("Next button clicked");
-        var PageNumberFrmCookie = document.cookie.replace(/(?:(?:^|.*;\s*)pageNUmber\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        let PageNumberFrmCookie = document.cookie.replace(/(?:(?:^|.*;\s*)pageNUmber\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         if(PageNumberFrmCookie !=undefined){
             console.log("Current Page Number from Cookie :"+PageNumberFrmCookie);
-            var nextPageNumber = parseInt(PageNumberFrmCookie,10) ;
+            let nextPageNumber = parseInt(PageNumberFrmCookie,10) ;
             nextPageNumber = nextPageNumber+1;
             getPopularMovies(nextPageNumber);
         }
     },false);
 
-    var previous = document.getElementById("previous");
+    let previous = document.getElementById("previous");
     previous.addEventListener("click",function(){
         console.log("previuos button clicked ");
-        var PageNumberFrmCookie = document.cookie.replace(/(?:(?:^|.*;\s*)pageNUmber\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        let PageNumberFrmCookie = document.cookie.replace(/(?:(?:^|.*;\s*)pageNUmber\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         if(PageNumberFrmCookie !=undefined){
             console.log("Current Page Number from Cookie :"+PageNumberFrmCookie);
-            var nextPageNumber = parseInt(PageNumberFrmCookie,10) ;
+        let nextPageNumber = parseInt(PageNumberFrmCookie,10) ;
             nextPageNumber = nextPageNumber-1;
             getPopularMovies(nextPageNumber);
         }
     },false);
     console.log("Collection full details ");
-    var actionLink = document.getElementById("actionLink");
+    let actionLink = document.getElementById("actionLink");
     actionLink.addEventListener("click",function(){
         displayCompleteList("action");
-        var previous = document.getElementById("previous");
+        let previous = document.getElementById("previous");
         previous.style.display="none";
-        var previous = document.getElementById("next");
+        let previous = document.getElementById("next");
         previous.style.display="none";
     },false);
-    var adventureLink = document.getElementById("adventureLink");
+    let adventureLink = document.getElementById("adventureLink");
     adventureLink.addEventListener("click",function(){
         displayCompleteList("adventure");
-        var previous = document.getElementById("previous");
+        let previous = document.getElementById("previous");
         previous.style.display="none";
-        var previous = document.getElementById("next");
+        let previous = document.getElementById("next");
         previous.style.display="none";
     },false);
-    var comicLink = document.getElementById("comicLink");
+    let comicLink = document.getElementById("comicLink");
     comicLink.addEventListener("click",function(){
         displayCompleteList("comic");
-        var previous = document.getElementById("previous");
+        let previous = document.getElementById("previous");
         previous.style.display="none";
-        var previous = document.getElementById("next");
+        let previous = document.getElementById("next");
         previous.style.display="none";
     },false);
-    var searchBar = document.getElementById("searchBar");
+    let searchBar = document.getElementById("searchBar");
    
     searchBar.addEventListener("keyup",function(e){
-        var key = e.which || e.keyCode;
+        let key = e.which || e.keyCode;
         if (key != 13) { // 13 is enter
          console.log("key other than enter pressed");
          getAllSearchResult();

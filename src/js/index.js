@@ -14,21 +14,29 @@ window.onload =function(){
     const pageNUmber =1;
     getPopularMovies(pageNUmber); 
     console.log("Popular Movies has been Displayed ");
-    // var home = document.getElementById("home");
-    // if(home !=null){
-    //     home.addEventListener("click",function(){
-    //         console.log("Home page displayed");
-    //         getPopularMovies(pageNUmber); 
-    //     },false);
-    // }
+    var home = document.getElementById("home");
+    if(home !=null){
+        home.addEventListener("click",function(){
+            console.log("Home page displayed");
+            var popularMovies =  document.getElementById("popularMovies");
+            if(popularMovies !==null){
+              popularMovies.innerHTML="Popular Moviess";
+            }
+            getPopularMovies(pageNUmber); 
+        },false);
+    }
   
-    // var compName = document.getElementById("compName");
-    // if(compName !=null){
-    //     compName.addEventListener("click",function(){
-    //         console.log("Home page displayed");
-    //         getPopularMovies(pageNUmber); 
-    //     },false);
-    // }
+    var compName = document.getElementById("compName");
+    if(compName !=null){
+        compName.addEventListener("click",function(){
+            console.log("Home page displayed");
+            var popularMovies =  document.getElementById("popularMovies");
+            if(popularMovies !==null){
+              popularMovies.innerHTML="Popular Moviess";
+            }
+            getPopularMovies(pageNUmber); 
+        },false);
+    }
   
     getAllMoviewCollection();
     console.log("All collections has been Displayed ");

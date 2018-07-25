@@ -19,7 +19,8 @@ module.exports = {
             {loader:'css-loader'},
             {loader:'sass-loader'}
           ],
-        exclude: /node_modules/ }
+        exclude: /node_modules/ },
+        {test: /.html/, loader: 'raw-loader', exclude: /node_modules/ }
     ]
   },
   plugins: [

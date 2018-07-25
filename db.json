@@ -1,20 +1,6 @@
 {
   "Action": [
     {
-      "title": "Detective Conan: Zero the Enforcer",
-      "poster_path": "/mMWV5MXn2pkDnnI4vWpy3dRWdNC.jpg",
-      "overview": "A harmless game of \"Truth or Dare\" among friends turns deadly when someone—or something—begins to punish those who tell a lie—or refuse the dare.",
-      "release_date": "2018-04-12",
-      "id": 1
-    },
-    {
-      "title": "Mission: Impossible - Rogue Nation",
-      "poster_path": "/z2sJd1OvAGZLxgjBdSnQoLCfn3M.jpg",
-      "overview": "A harmless game of \"Truth or Dare\" among friends turns deadly when someone—or something—begins to punish those who tell a lie—or refuse the dare.",
-      "release_date": "2018-04-12",
-      "id": 2
-    },
-    {
       "title": "The Purge: Election Year",
       "poster_path": "/bjOJFjUffRZQpNQ9g3yvc9F6LBM.jpg",
       "overview": "A harmless game of \"Truth or Dare\" among friends turns deadly when someone—or something—begins to punish those who tell a lie—or refuse the dare.",
@@ -22,41 +8,27 @@
       "id": 3
     },
     {
-      "title": "Qayamat: City Under Threat",
-      "poster_path": "/e6n3Tf86MJgqtF34bLogGOpkNQf.jpg",
-      "overview": "CBI Officer Akram Sheikh (Sunil Shetty) is on the verge of nabbing three dreaded Pakistan-backed arms dealers , the brothers Ali (Arbaaz Khan) and Abbas (Sanjay Kapoor) and their common moll Laila (Isha Koppikar) . When Sheikh busts an important arms deal conducted by his three targets , Ali-Abbas join forces with Gopal (Chunky Pandey) , a corrupt scientist to get hold of a deadly virus and take the tourists at the Elphinstone Jail resort as hostage . Akram Sheikh is now compelled to get help from Rachit (Ajay Devgan) , a criminal serving jail time who was a former associate of Ali-Abbas and the only person in history to have successfully escaped the Elphinstone jail . Along with a commando team , they try to pull off a rescue attempt by breaking in the jail and rescuing the hostages .",
-      "release_date": "2003-07-11",
+      "title": "Ant-Man",
+      "poster_path": "/D6e8RJf2qUstnfkTslTXNTUAlT.jpg",
+      "overview": "Armed with the astonishing ability to shrink in scale but increase in strength, master thief Scott Lang must embrace his inner-hero and help his mentor, Doctor Hank Pym, protect the secret behind his spectacular Ant-Man suit from a new generation of towering threats. Against seemingly insurmountable obstacles, Pym and Lang must plan and pull off a heist that will save the world.",
+      "release_date": "2015-07-14",
       "id": 4
     }
   ],
   "Adventure": [
     {
-      "title": "Deadpool 2",
-      "poster_path": "/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg",
-      "overview": "Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.",
-      "release_date": "2018-05-15",
-      "id": 3
+      "title": "The First Purge",
+      "poster_path": "/2slvblTroiT1lY9bYLK7Amigo1k.jpg",
+      "overview": "To push the crime rate below one percent for the rest of the year, the New Founding Fathers of America test a sociological theory that vents aggression for one night in one isolated community. But when the violence of oppressors meets the rage of the others, the contagion will explode from the trial-city borders and spread across the nation.",
+      "release_date": "2018-07-04",
+      "id": 9
     },
     {
-      "title": "The Purge",
-      "poster_path": "/tGGJOuLHX7UDlTz57sjfhW1qreP.jpg",
-      "overview": "Given the country's overcrowded prisons, the U.S. government begins to allow 12-hour periods of time in which all illegal activity is legal. During one of these free-for-alls, a family must protect themselves from a home invasion.",
-      "release_date": "2013-05-31",
-      "id": 4
-    },
-    {
-      "title": "Black Panther",
-      "poster_path": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
-      "overview": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without. Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister, members of the Dora Milaje (the Wakandan 'special forces') and an American secret agent, to prevent Wakanda from being dragged into a world war.",
-      "release_date": "2018-02-13",
-      "id": 5
-    },
-    {
-      "title": "Deadpool 2",
-      "poster_path": "/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg",
-      "overview": "Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.",
-      "release_date": "2018-05-15",
-      "id": 6
+      "title": "Skyscraper",
+      "poster_path": "/5LYSsOPzuP13201qSzMjNxi8FxN.jpg",
+      "overview": "Framed and on the run, a former FBI agent must save his family from a blazing fire in the world's tallest buil",
+      "release_date": "2018-07-11",
+      "id": 10
     }
   ],
   "Comic": [
@@ -68,17 +40,10 @@
       "id": 3
     },
     {
-      "title": "Tomb Raider",
-      "poster_path": "/3zrC5tUiR35rTz9stuIxnU1nUS5.jpg",
-      "overview": "Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she finds herself on the island where her father disappeared.",
-      "release_date": "2018-03-05",
-      "id": 4
-    },
-    {
-      "title": "Star Wars: The Last Jedi",
-      "poster_path": "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
-      "overview": "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
-      "release_date": "2017-12-13",
+      "title": "Jurassic World: Fallen Kingdom",
+      "poster_path": "/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg",
+      "overview": "Several years after the demise of Jurassic World, a volcanic eruption threatens the remaining dinosaurs on the",
+      "release_date": "2018-06-06",
       "id": 5
     }
   ]

@@ -5,7 +5,7 @@ export default class FooterController {
     this.footerView = new FooterView();
   }
 
-  createFooterComponent() {
-    this.footerView.createFooterComponent();
+  static createFooterComponent() {
+    FooterView.createFooterComponent();
   }
 }

@@ -5,7 +5,7 @@ export default class GenerateStaticContent {
     this.generateTemplateUtil = new GenerateTemplateUtil();
   }
 
-  createModelTemplate() {
+  static createModelTemplate() {
     const modalTemplate = ` <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="popup-content">
@@ -46,11 +46,11 @@ export default class GenerateStaticContent {
         </div>
     </div>`;
 
-    const modelElement = this.generateTemplateUtil.createHTMLElement(modalTemplate);
+    const modelElement = GenerateTemplateUtil.createHTMLElement(modalTemplate);
     return modelElement;
   }
 
-  createSearchModelTemplate() {
+  static createSearchModelTemplate() {
     const modalTemplate = ` <div class="modal fade" id="exampleModalsearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="popup-content">
@@ -91,7 +91,7 @@ export default class GenerateStaticContent {
         </div>
     </div>`;
 
-    const modelElement = this.generateTemplateUtil.createHTMLElement(modalTemplate);
+    const modelElement = GenerateTemplateUtil.createHTMLElement(modalTemplate);
     return modelElement;
   }
 }

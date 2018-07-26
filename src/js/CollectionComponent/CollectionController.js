@@ -5,7 +5,6 @@ import { store } from '../state/state';
 
 export default class CollectionController {
   constructor() {
-    this.collectionService = new CollectionService();
     this.collectionView = new CollectionView();
     this.generateTemplateUtil = new GenerateTemplateUtil();
   }
@@ -25,7 +24,7 @@ export default class CollectionController {
     console.log(`actoon..:${actionId} adventure...${adventureId}   comic...${comicId}`);
 
 
-    const actionList = this.collectionService.getDataFromServer('Action');
+    const actionList = CollectionService.getDataFromServer('Action');
     const self = this;
 
 
@@ -37,15 +36,16 @@ export default class CollectionController {
         while (actionId.firstChild) {
           actionId.removeChild(actionId.firstChild);
         }
-        let length = state.ActionList.length;
-        if (count < length) {
-          length = count;
+        let arrlength = state.ActionList.length;
+        if (count < arrlength) {
+          arrlength = count;
         }
 
-        for (let i = 0; i < length; i += 1) {
-          actionListHtml = self.collectionView.createCollListElement(state.ActionList[i], actionListHtml);
+        for (let i = 0; i < arrlength; i += 1) {
+          actionListHtml = CollectionView
+            .createCollListElement(state.ActionList[i], actionListHtml);
         }
-        actionId.appendChild(self.generateTemplateUtil.createAllChildHTMLElement(actionListHtml));
+        actionId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(actionListHtml));
       }
     });
 
@@ -62,7 +62,7 @@ export default class CollectionController {
     });
 
 
-    const adventureList = this.collectionService.getDataFromServer('Adventure');
+    const adventureList = CollectionService.getDataFromServer('Adventure');
 
     store.subscribe(() => {
       const state = store.getState();
@@ -72,15 +72,16 @@ export default class CollectionController {
         }
         let adventureListHtml = '';
         const count = 4;
-        let length = state.AdventureList.length;
-        if (count < length) {
-          length = count;
+        let arrlength = state.AdventureList.length;
+        if (count < arrlength) {
+          arrlength = count;
         }
 
-        for (let i = 0; i < length; i += 1) {
-          adventureListHtml = self.collectionView.createCollListElement(state.AdventureList[i], adventureListHtml);
+        for (let i = 0; i < arrlength; i += 1) {
+          adventureListHtml = CollectionView
+            .createCollListElement(state.AdventureList[i], adventureListHtml);
         }
-        adventureId.appendChild(self.generateTemplateUtil.createAllChildHTMLElement(adventureListHtml));
+        adventureId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(adventureListHtml));
       }
     });
 
@@ -92,7 +93,7 @@ export default class CollectionController {
       });
     });
 
-    const comicList = this.collectionService.getDataFromServer('Comic');
+    const comicList = CollectionService.getDataFromServer('Comic');
 
     store.subscribe(() => {
       const state = store.getState();
@@ -102,15 +103,16 @@ export default class CollectionController {
         while (comicId.firstChild) {
           comicId.removeChild(comicId.firstChild);
         }
-        let length = state.ComicList.length;
-        if (count < length) {
-          length = count;
+        let arrlength = state.ComicList.length;
+        if (count < arrlength) {
+          arrlength = count;
         }
 
-        for (let i = 0; i < length; i += 1) {
-          comicListHtml = self.collectionView.createCollListElement(state.ComicList[i], comicListHtml);
+        for (let i = 0; i < arrlength; i += 1) {
+          comicListHtml = CollectionView
+            .createCollListElement(state.ComicList[i], comicListHtml);
         }
-        comicId.appendChild(self.generateTemplateUtil.createAllChildHTMLElement(comicListHtml));
+        comicId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(comicListHtml));
       }
     });
 
@@ -137,7 +139,7 @@ export default class CollectionController {
           self.collectionView.createCollectionSectionmoviesList(state.ActionList, 'Action');
         }
       });
-      moviesList = self.collectionService.getDataFromServer('action');
+      moviesList = CollectionService.getDataFromServer('action');
       moviesList.then((movieList) => {
         console.log(`CollectionController : createEventOnCollectionClick() :moviesList :${movieList}`);
         store.dispatch(
@@ -162,7 +164,7 @@ export default class CollectionController {
           self.collectionView.createCollectionSectionmoviesList(state.AdventureList, 'Adventure');
         }
       });
-      moviesList = self.collectionService.getDataFromServer('adventure');
+      moviesList = CollectionService.getDataFromServer('adventure');
 
       moviesList.then((movieList) => {
         console.log(`CollectionController : createEventOnCollectionClick() :moviesList :${movieList}`);
@@ -183,7 +185,7 @@ export default class CollectionController {
           self.collectionView.createCollectionSectionmoviesList(state.ComicList, 'Comic');
         }
       });
-      moviesList = self.collectionService.getDataFromServer('comic');
+      moviesList = CollectionService.getDataFromServer('comic');
       moviesList.then((movieList) => {
         console.log(`CollectionController : createEventOnCollectionClick() :moviesList :${movieList}`);
         store.dispatch(

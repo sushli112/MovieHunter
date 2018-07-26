@@ -17,14 +17,14 @@ export default class PopularListView {
         </div>`;
 
 
-    const popTemplate = this.generateTemplateUtil.createAllChildHTMLElement(popularTemplate);
+    const popTemplate = GenerateTemplateUtil.createAllChildHTMLElement(popularTemplate);
     const popMovieSec = popTemplate.querySelector('#popMovieSec');
     moviesList.forEach((movie) => {
       popMovieSec.appendChild(this.createCardElement(movie));
     });
-    popMovieSec.appendChild(this.generateStaticContent.createModelTemplate());
+    popMovieSec.appendChild(GenerateStaticContent.createModelTemplate());
     const section = document.getElementById('upperBody');
-    section.appendChild(this.generateTemplateUtil.createAllChildHTMLElement(popularHeader));
+    section.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(popularHeader));
     section.appendChild(popMovieSec);
 
 
@@ -50,9 +50,10 @@ export default class PopularListView {
 
         store.subscribe(() => {
           const state = store.getState();
-          if (state.identifier === 'addtoaction' || state.identifier === 'addtocomic' || state.identifier === 'addtoadventure') {
+          if (state.identifier === 'addtoaction' || state.identifier === 'addtocomic'
+          || state.identifier === 'addtoadventure') {
             self.refreshCollectionListComponent(state);
-            self.popularService.saveToCollection(title, poster_path, overview, release_date, selectedVal);
+            PopularListService.saveToCollection(title, poster_path, overview, release_date, selectedVal);
           }
         });
 
@@ -118,10 +119,10 @@ export default class PopularListView {
         arrLength = count;
       }
       for (let i = 0; i < arrLength; i += 1) {
-        actionListHtml = self.popularService
+        actionListHtml = PopularListService
           .createCollListElement(state.ActionList[i], actionListHtml);
       }
-      actionId.appendChild(self.generateTemplateUtil.createAllChildHTMLElement(actionListHtml));
+      actionId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(actionListHtml));
     }
 
     if (state.identifier === 'addtoadventure') {
@@ -136,10 +137,10 @@ export default class PopularListView {
         arrLength = count;
       }
       for (let i = 0; i < arrLength; i += 1) {
-        adventureListHtml = self.popularService
+        adventureListHtml = PopularListService
           .createCollListElement(state.AdventureList[i], adventureListHtml);
       }
-      adventureId.appendChild(self.generateTemplateUtil
+      adventureId.appendChild(GenerateTemplateUtil
         .createAllChildHTMLElement(adventureListHtml));
     }
     if (state.identifier === 'addtocomic') {
@@ -153,10 +154,10 @@ export default class PopularListView {
         arrLength = count;
       }
       for (let i = 0; i < arrLength; i += 1) {
-        comicListHtml = self.popularService
+        comicListHtml = PopularListService
           .createCollListElement(state.ComicList[i], comicListHtml);
       }
-      comicId.appendChild(self.generateTemplateUtil.createAllChildHTMLElement(comicListHtml));
+      comicId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(comicListHtml));
     }
   }
 
@@ -178,7 +179,7 @@ export default class PopularListView {
                         </div>
                         </div>
                     </div>`;
-    const cardElement = this.generateTemplateUtil.createAllChildHTMLElement(cardTemplate);
+    const cardElement = GenerateTemplateUtil.createAllChildHTMLElement(cardTemplate);
 
     const button = cardElement.querySelector('#popularButton');
     button.onclick = function () {

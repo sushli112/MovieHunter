@@ -25,7 +25,7 @@ export default class HeaderController {
     const pageNUmber = 1;
     console.log('HeaderController:Inside displaySearchedList method .............');
     document.cookie = `pageNUmber=${pageNUmber}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-    const moviesList = this.headerService.displayAllSearchedResult();
+    const moviesList = HeaderService.displayAllSearchedResult();
     const self = this;
     store.subscribe(() => {
       const state = store.getState();

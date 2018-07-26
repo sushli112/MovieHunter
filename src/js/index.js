@@ -9,7 +9,6 @@ import PopularListController from './PopularListComponent/PopularListController'
 import CollectionController from './CollectionComponent/CollectionController';
 
 const headerObj = new HeaderController();
-const footerObj = new FooterController();
 const PopularListObj = new PopularListController();
 const collectionObj = new CollectionController();
 
@@ -19,4 +18,4 @@ PopularListObj.displayPopularMovies();
 
 collectionObj.createCollectionList();
 
-footerObj.createFooterComponent();
+FooterController.createFooterComponent();

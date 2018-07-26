@@ -5,7 +5,7 @@ export default class FooterView {
     this.generateTemplateUtil = new GenerateTemplateUtil();
   }
 
-  createFooterComponent() {
+  static createFooterComponent() {
     const footerTemplate = ` <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -56,7 +56,7 @@ export default class FooterView {
         </div>
     </div>`;
 
-    const footer = this.generateTemplateUtil.createHTMLElement(footerTemplate);
+    const footer = GenerateTemplateUtil.createHTMLElement(footerTemplate);
     document.getElementById('footer').appendChild(footer);
   }
 }

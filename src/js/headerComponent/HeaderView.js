@@ -48,7 +48,7 @@ export default class HeaderView {
         </ul>
         </section>`;
 
-    const headerTemp = this.generateTemplateUtil.createAllChildHTMLElement(headerTemplate);
+    const headerTemp = GenerateTemplateUtil.createAllChildHTMLElement(headerTemplate);
     const headerTemplte = headerTemp;
     // document.getElementById("header").appendChild(headerTemp);
     return headerTemplte;
@@ -63,16 +63,16 @@ export default class HeaderView {
     <button class="btn btn-secondary float-right" id="next">Next</button>`;
 
 
-    const popTemplate = this.generateTemplateUtil.createAllChildHTMLElement(SearchTemplate);
+    const popTemplate = GenerateTemplateUtil.createAllChildHTMLElement(SearchTemplate);
     const searchMovSec = popTemplate.querySelector('#searchMovSec');
     moviesList.forEach((movie) => {
       searchMovSec.appendChild(this.createCardElement(movie));
     });
-    searchMovSec.appendChild(this.generateStaticContent.createSearchModelTemplate());
+    searchMovSec.appendChild(GenerateStaticContent.createSearchModelTemplate());
     const section = document.getElementById('searchSection');
-    section.appendChild(this.generateTemplateUtil.createAllChildHTMLElement(SearchHeader));
+    section.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(SearchHeader));
     section.appendChild(searchMovSec);
-    section.appendChild(this.generateTemplateUtil.createAllChildHTMLElement(buttonsTemplate));
+    section.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(buttonsTemplate));
     console.log(`search section content:${section.innerHTML}`);
 
     const add = document.getElementById('addsearch');
@@ -103,7 +103,7 @@ export default class HeaderView {
           const state = store.getState();
           if (state.identifier === 'addtoaction' || state.identifier === 'addtocomic' || state.identifier === 'addtoadventure') {
             self.refreshCollectionListComponent(state);
-            self.headerService.saveToCollection(title, poster_path, overview, release_date, selectedVal);
+            HeaderService.saveToCollection(title, poster_path, overview, release_date, selectedVal);
           }
         });
 
@@ -169,10 +169,10 @@ export default class HeaderView {
         arrLength = count;
       }
       for (let i = 0; i < arrLength; i += 1) {
-        actionListHtml = self.headerService
+        actionListHtml = HeaderService
           .createCollListElement(state.ActionList[i], actionListHtml);
       }
-      actionId.appendChild(self.generateTemplateUtil.createAllChildHTMLElement(actionListHtml));
+      actionId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(actionListHtml));
     }
 
     if (state.identifier === 'addtoadventure') {
@@ -187,10 +187,10 @@ export default class HeaderView {
         arrLength = count;
       }
       for (let i = 0; i < arrLength; i += 1) {
-        adventureListHtml = self.headerService
+        adventureListHtml = HeaderService
           .createCollListElement(state.AdventureList[i], adventureListHtml);
       }
-      adventureId.appendChild(self.generateTemplateUtil
+      adventureId.appendChild(GenerateTemplateUtil
         .createAllChildHTMLElement(adventureListHtml));
     }
     if (state.identifier === 'addtocomic') {
@@ -204,9 +204,9 @@ export default class HeaderView {
         arrLength = count;
       }
       for (let i = 0; i < arrLength; i += 1) {
-        comicListHtml = self.headerService.createCollListElement(state.ComicList[i], comicListHtml);
+        comicListHtml = HeaderService.createCollListElement(state.ComicList[i], comicListHtml);
       }
-      comicId.appendChild(self.generateTemplateUtil.createAllChildHTMLElement(comicListHtml));
+      comicId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(comicListHtml));
     } // /TODO/////////////////////////////////////////////
   }
 
@@ -227,7 +227,7 @@ export default class HeaderView {
                     </div>
                     </div>
                 </div>`;
-    const cardElement = this.generateTemplateUtil.createAllChildHTMLElement(cardTemplate);
+    const cardElement =GenerateTemplateUtil.createAllChildHTMLElement(cardTemplate);
 
     const button = cardElement.querySelector('#searchModal');
     button.onclick = function () {

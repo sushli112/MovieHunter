@@ -13,7 +13,7 @@ export default class PopularListController {
     const pageNUmber = 1;
     console.log('Inside getPopularMovies method .............');
     document.cookie = `pageNUmber=${pageNUmber}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-    const moviesList = this.popularService.getPopularMovies(pageNUmber);
+    const moviesList = PopularListService.getPopularMovies(pageNUmber);
     store.subscribe(() => {
       const state = store.getState();
       console.log(`state found:${state}`);

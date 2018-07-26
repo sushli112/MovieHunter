@@ -1,5 +1,5 @@
 export default class PopularListService {
-  getPopularMovies(pageNUmber) {
+  static getPopularMovies(pageNUmber) {
     console.log('Inside getPopularMovies method .............');
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=aef122b97215b0783d385328924c3a26&language=en-US&page=${pageNUmber}`;
     console.log(`Composed url is: ${url}`);
@@ -16,7 +16,7 @@ export default class PopularListService {
     return response.then(value => value);
   }
 
-  saveToCollection(title, posterPath, overview, releaseDate, selectedVal) {
+  static saveToCollection(title, posterPath, overview, releaseDate, selectedVal) {
     let url = null;
     if (selectedVal === 'action') {
       url = 'http://localhost:8080/Action';
@@ -46,7 +46,7 @@ export default class PopularListService {
       .catch(error => console.error('Error:', error));
   }
 
-  createCollListElement(movie, movieListHtml) {
+  static createCollListElement(movie, movieListHtml) {
     movieListHtml = `${movieListHtml}
         <li >
         <div class="d-flex flex-row collectionCard">

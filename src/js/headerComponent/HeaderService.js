@@ -1,5 +1,5 @@
 export default class HeaderService {
-  displayAllSearchedResult() {
+  static displayAllSearchedResult() {
     const searchvalue = document.getElementById('searchBar').value;
     const searchurl1 = 'https://api.themoviedb.org/3/search/movie?api_key=aef122b97215b0783d385328924c3a26&language=en-US&query=';
     const searchurl2 = '&page=1&include_adult=false';
@@ -20,7 +20,7 @@ export default class HeaderService {
     return response.then(value => value);
   }
 
-  createCollListElement(movie, movieListHtml) {
+  static createCollListElement(movie, movieListHtml) {
     movieListHtml = `${movieListHtml}
         <li >
         <div class="d-flex flex-row collectionCard">
@@ -34,7 +34,7 @@ export default class HeaderService {
     return movieListHtml;
   }
 
-  saveToCollection(title, posterPath, overview, releaseDate, selectedVal) {
+  static saveToCollection(title, posterPath, overview, releaseDate, selectedVal) {
     let url = null;
     if (selectedVal === 'action') {
       url = 'http://localhost:8080/Action';

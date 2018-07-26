@@ -1,5 +1,5 @@
 export default class CollectionService {
-  getDataFromServer(collectionType) {
+  static getDataFromServer(collectionType) {
     console.log('Inside getDataFromServer method .............');
 
     const url = `http://localhost:8080/${collectionType}`;
@@ -17,7 +17,7 @@ export default class CollectionService {
     return response.then(value => value);
   }
 
-  deleteMovieFromList(movieId, currentListType) {
+  static deleteMovieFromList(movieId, currentListType) {
     console.log(`inside deleteMovieFromList :movieId${movieId} currentListType${currentListType}`);
     let url = null;
     if (currentListType === 'action') {

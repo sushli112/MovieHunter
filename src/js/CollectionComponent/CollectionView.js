@@ -7,7 +7,6 @@ export default class CollectionView {
   constructor() {
     this.generateTemplateUtil = new GenerateTemplateUtil();
     this.generateStaticContent = new GenerateStaticContent();
-    this.collectionListService = new CollectionService();
   }
 
 
@@ -57,11 +56,11 @@ export default class CollectionView {
         </div>
     </div>`;
 
-    const collListTemplate = this.generateTemplateUtil.createAllChildHTMLElement(collctionTemp);
+    const collListTemplate = GenerateTemplateUtil.createAllChildHTMLElement(collctionTemp);
     return collListTemplate;
   }
 
-  createCollListElement(movie, movieListHtml) {
+  static createCollListElement(movie, movieListHtml) {
     movieListHtml = `${movieListHtml}
         <li >
         <div class="d-flex flex-row collectionCard">
@@ -96,7 +95,7 @@ export default class CollectionView {
                         </div>
                         </div>
                     </div>`;
-    const cardElement = this.generateTemplateUtil.createAllChildHTMLElement(cardTemplate);
+    const cardElement = GenerateTemplateUtil.createAllChildHTMLElement(cardTemplate);
     console.log(`card element:${cardElement}`);
     const removeButton = cardElement.getElementById(`${movie.id}`);
     const self = this;
@@ -141,7 +140,7 @@ export default class CollectionView {
       }
       console.log(`currentListType is:${currentListType}`);
 
-      self.collectionListService.deleteMovieFromList(movie.id, currentListType);
+      CollectionService.deleteMovieFromList(movie.id, currentListType);
     };
     return cardElement;
   }
@@ -156,14 +155,14 @@ export default class CollectionView {
         </div>`;
 
 
-    const collTempate = this.generateTemplateUtil.createAllChildHTMLElement(collTemplate);
+    const collTempate = GenerateTemplateUtil.createAllChildHTMLElement(collTemplate);
     const colMovieSec = collTempate.querySelector('#collMovieSec');
     moviesList.forEach((movie) => {
       colMovieSec.appendChild(this.createCardElement(movie, type));
     });
-    colMovieSec.appendChild(this.generateStaticContent.createModelTemplate());
+    colMovieSec.appendChild(GenerateStaticContent.createModelTemplate());
     const section = document.getElementById('collectionSection');
-    section.appendChild(this.generateTemplateUtil.createAllChildHTMLElement(collectionHeader));
+    section.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(collectionHeader));
     section.appendChild(colMovieSec);
   }
 }

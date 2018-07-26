@@ -1,5 +1,5 @@
 export default class GenerateTemplateUtil {
-  createHTMLElement(html) {
+  static createHTMLElement(html) {
     const template = document.createElement('template');
 
     template.innerHTML = html;
@@ -7,7 +7,7 @@ export default class GenerateTemplateUtil {
     return template.content.firstElementChild;
   }
 
-  createAllChildHTMLElement(html) {
+  static createAllChildHTMLElement(html) {
     const template = document.createElement('template');
 
     template.innerHTML = html;

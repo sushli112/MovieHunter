@@ -1,16 +1,15 @@
-import {createStore} from 'redux';
-import {Reducer} from '../state/Reducer';
-var state =
-{
-    "PopularList":[],
-    "ActionList":[],
-    "AdventureList":[],
-    "ComicList":[],
-    "SearchedList":[],
-    "identifier":"popular"
-}
-export let store = createStore(Reducer,state);
+import { createStore } from 'redux';
+import Reducer from './Reducer';
 
+const state = {
+  PopularList: [],
+  ActionList: [],
+  AdventureList: [],
+  ComicList: [],
+  SearchedList: [],
+  identifier: 'popular',
+};
+export const store = createStore(Reducer, state);
 
 
 // //Actions
@@ -19,8 +18,3 @@ export let store = createStore(Reducer,state);
 //         type:'ACTION_LIST'
 //     })
 // })
-
-
-
-
-

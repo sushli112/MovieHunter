@@ -1,13 +1,12 @@
-import {GenerateTemplateUtil} from '../Common/GenerateTemplateUtil';
+import GenerateTemplateUtil from '../Common/GenerateTemplateUtil';
 
-export class FooterView{
-    constructor(){
-        this.generateTemplateUtil = new GenerateTemplateUtil();
-    }
-    createFooterComponent(){
+export default class FooterView {
+  constructor() {
+    this.generateTemplateUtil = new GenerateTemplateUtil();
+  }
 
-
-        const footerTemplate =` <div class="container">
+  createFooterComponent() {
+    const footerTemplate = ` <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <ul class="footerList">
@@ -57,7 +56,7 @@ export class FooterView{
         </div>
     </div>`;
 
-    const footer =  this.generateTemplateUtil.createHTMLElement(footerTemplate);
+    const footer = this.generateTemplateUtil.createHTMLElement(footerTemplate);
     document.getElementById('footer').appendChild(footer);
-    }
+  }
 }

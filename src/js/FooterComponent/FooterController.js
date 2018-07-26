@@ -1,12 +1,11 @@
-import {FooterView} from './FooterView'
-export class FooterController{
-    constructor(){
-       
-        this.footerView = new FooterView();
-    }
+import FooterView from './FooterView';
 
-    createFooterComponent(){
+export default class FooterController {
+  constructor() {
+    this.footerView = new FooterView();
+  }
 
-        this.footerView.createFooterComponent();
-    }
+  createFooterComponent() {
+    this.footerView.createFooterComponent();
+  }
 }

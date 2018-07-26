@@ -1,22 +1,17 @@
-export class GenerateTemplateUtil{
+export default class GenerateTemplateUtil {
+  createHTMLElement(html) {
+    const template = document.createElement('template');
 
-        createHTMLElement(html) {
+    template.innerHTML = html;
 
-        const template = document.createElement("template")
-        
-        template.innerHTML = html
-        
-        return template.content.firstElementChild;
-        
-        } 
+    return template.content.firstElementChild;
+  }
 
-        createAllChildHTMLElement(html) {
+  createAllChildHTMLElement(html) {
+    const template = document.createElement('template');
 
-            const template = document.createElement("template")
-            
-            template.innerHTML = html
-            
-            return template.content
-            
-            } 
+    template.innerHTML = html;
+
+    return template.content;
+  }
 }

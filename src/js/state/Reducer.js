@@ -4,76 +4,54 @@ export default function Reducer(currentState = {
   ActionList: [],
   AdventureList: [],
   ComicList: [],
-  SearchedList: [],
-  identifier: 'popular',
+  SearchedList: []
 }, action) {
   let nextState = null;
   switch (action.type) {
     case 'SEARCH_RESULT':
-      nextState = Object.assign({}, currentState);
-      nextState.SearchedList = action.data;
-      nextState.identifier = 'search';
-      return nextState;
+     // return Object.assign({}, currentState,{SearchedList:action.data});  
+             nextState = Object.assign({}, currentState,{SearchedList:action.data});
+            return nextState;
     case 'POPULAR_LIST':
-      // let nextState = $.extend(true,{},currentState);
-      // let nextState = JSON.parse(JSON.stringify( currentState ));
-      nextState = Object.assign({}, currentState);
-      nextState.PopularList = action.data;
-      nextState.identifier = 'popular';
-      return nextState;
+            nextState = Object.assign({}, currentState,{PopularList:action.data});
+            return nextState;
     case 'ACTION_LIST':
-      nextState = Object.assign({}, currentState);
-      nextState.ActionList = action.data;
-      nextState.identifier = 'action';
-      return nextState;
-
+            nextState = Object.assign({}, currentState,{ActionList:action.data})
+            return nextState;
     case 'ADVENTURE_LIST':
-      nextState = Object.assign({}, currentState);
-      nextState.AdventureList = action.data;
-      nextState.identifier = 'adventure';
-      return nextState;
+             nextState = Object.assign({}, currentState,{AdventureList:action.data})
+             return nextState;
 
     case 'COMIC_LIST':
-      nextState = Object.assign({}, currentState);
-      nextState.ComicList = action.data;
-      nextState.identifier = 'comic';
-      return nextState;
+             nextState = Object.assign({}, currentState,{ComicList:action.data})
+             return nextState;
 
     case 'DISP_ACTION_LIST':
-      nextState = Object.assign({}, currentState);
-      nextState.ActionList = action.data;
-      nextState.identifier = 'dispaction';
-      return nextState;
+                nextState =Object.assign({}, currentState,{ActionList:action.data})
+                return nextState;
 
     case 'DISP_ADVENTURE_LIST':
-      nextState = Object.assign({}, currentState);
-      nextState.AdventureList = action.data;
-      nextState.identifier = 'dispadventure';
-      return nextState;
+                nextState = Object.assign({}, currentState,{AdventureList:action.data})
+                return nextState;
 
     case 'DISP_COMIC_LIST':
-      nextState = Object.assign({}, currentState);
-      nextState.ComicList = action.data;
-      nextState.identifier = 'dispcomic';
-      return nextState;
+                nextState = Object.assign({}, currentState,{ComicList:action.data})
+                return nextState
 
 
     case 'ADD_TO_ACTION':
       nextState = Object.assign({}, currentState);
       nextState.ActionList = [...currentState.ActionList, action.data];
-      nextState.identifier = 'addtoaction';
       return nextState;
 
     case 'ADD_TO_COMIC':
       nextState = Object.assign({}, currentState);
       nextState.ComicList = [...currentState.ComicList, action.data];
-      nextState.identifier = 'addtocomic';
       return nextState;
 
     case 'ADD_TO_ADVENTURE':
       nextState = Object.assign({}, currentState);
       nextState.AdventureList = [...currentState.AdventureList, action.data];
-      nextState.identifier = 'addtoadventure';
       return nextState;
 
     case 'REMOVE_FROM_ACTION':
@@ -86,7 +64,6 @@ export default function Reducer(currentState = {
         }
       }
       nextState.ActionList = ActionListTemp;
-      nextState.identifier = 'removefromaction';
       return nextState;
 
     case 'REMOVE_FROM_ADEVENTURE':
@@ -98,7 +75,6 @@ export default function Reducer(currentState = {
         }
       }
       nextState.AdventureList = AdventureListTemp;
-      nextState.identifier = 'removefromadventure';
       return nextState;
 
     case 'REMOVE_FROM_COMIC':
@@ -110,7 +86,6 @@ export default function Reducer(currentState = {
         }
       }
       nextState.ComicList = ComicListTemp;
-      nextState.identifier = 'removefromcomic';
       return nextState;
 
     default:

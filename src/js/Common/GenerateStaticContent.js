@@ -6,12 +6,12 @@ export default class GenerateStaticContent {
   }
 
   static createModelTemplate() {
-    const modalTemplate = ` <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    const modalTemplate = ` <div class="modal fade" id="exampleModalPop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelPop" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="popup-content">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Movie Detail</h5>
+                        <h5 class="modal-title" id="exampleModalLabelPop">Movie Detail</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -51,7 +51,7 @@ export default class GenerateStaticContent {
   }
 
   static createSearchModelTemplate() {
-    const modalTemplate = ` <div class="modal fade" id="exampleModalsearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    const modalTemplate = ` <div class="modal fade" id="exampleModalsearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelsearch" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="popup-content">
                 <div class="modal-content">

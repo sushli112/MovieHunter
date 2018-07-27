@@ -101,8 +101,12 @@ export default class CollectionView {
     const self = this;
     let currentListType = null;
     removeButton.onclick = function () {
+
+  
+
       if (type === 'Comic') {
         currentListType = 'comic';
+        CollectionService.deleteMovieFromList(movie.id, currentListType);
         store.dispatch({
           type: 'REMOVE_FROM_COMIC',
           data: {
@@ -115,6 +119,7 @@ export default class CollectionView {
         });
       } else if (type === 'Adventure') {
         currentListType = 'adventure';
+        CollectionService.deleteMovieFromList(movie.id, currentListType);
         store.dispatch({
           type: 'REMOVE_FROM_ADEVENTURE',
           data: {
@@ -127,6 +132,7 @@ export default class CollectionView {
         });
       } else if (type === 'Action') {
         currentListType = 'action';
+        CollectionService.deleteMovieFromList(movie.id, currentListType);
         store.dispatch({
           type: 'REMOVE_FROM_ACTION',
           data: {
@@ -139,30 +145,67 @@ export default class CollectionView {
         });
       }
       console.log(`currentListType is:${currentListType}`);
-
-      CollectionService.deleteMovieFromList(movie.id, currentListType);
     };
     return cardElement;
   }
 
-  createCollectionSectionmoviesList(moviesList, type) {
-    const oldListTemplate = document.getElementById('collectionSection');
-    oldListTemplate.innerHTML = ''; // removing old template
+  createCollectionSectionmoviesList(state) {
+    let oldActionTemplate = document.getElementById('ActionSection');
+    oldActionTemplate.innerHTML = ''; // removing old template
 
-    const collectionHeader = `<h4 id="collectionMovies" class="pt-2">${type} Movies</h4>`;
-    const collTemplate = `<div class="CollectionMoviesContainer row" id="collMovieSec">
+    const actionHeader = `<h4 id="collectionMovies" class="pt-2">Action Movies</h4>`;
+    const collActTemplate = `<div class="CollectionMoviesContainer row" id="actionMovieSec">
 
         </div>`;
 
 
-    const collTempate = GenerateTemplateUtil.createAllChildHTMLElement(collTemplate);
-    const colMovieSec = collTempate.querySelector('#collMovieSec');
-    moviesList.forEach((movie) => {
-      colMovieSec.appendChild(this.createCardElement(movie, type));
+    const actionTempate = GenerateTemplateUtil.createAllChildHTMLElement(collActTemplate);
+    const actionMovieSec = actionTempate.querySelector('#actionMovieSec');
+    state.ActionList.forEach((movie) => {
+        actionMovieSec.appendChild(this.createCardElement(movie, "Action"));
     });
-    colMovieSec.appendChild(GenerateStaticContent.createModelTemplate());
-    const section = document.getElementById('collectionSection');
-    section.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(collectionHeader));
-    section.appendChild(colMovieSec);
+    actionMovieSec.appendChild(GenerateStaticContent.createModelTemplate());
+    const actSection = document.getElementById('ActionSection');
+    actSection.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(actionHeader));
+    actSection.appendChild(actionMovieSec);
+
+    
+
+    let oldAdvenTemplate = document.getElementById('AdventureSection');
+    oldAdvenTemplate.innerHTML = ''; // removing old template
+
+    const AdvenHeader = `<h4 id="collectionMovies" class="pt-2">Adventure Movies</h4>`;
+    const collAdveTemplate = `<div class="CollectionMoviesContainer row" id="advnMovieSec"> </div>`;
+
+    const advnTempate = GenerateTemplateUtil.createAllChildHTMLElement(collAdveTemplate);
+    const advnMovieSec = advnTempate.querySelector('#advnMovieSec');
+    state.AdventureList.forEach((movie) => {
+        advnMovieSec.appendChild(this.createCardElement(movie, "Adventure"));
+    });
+    advnMovieSec.appendChild(GenerateStaticContent.createModelTemplate());
+    const advenSection = document.getElementById('AdventureSection');
+    advenSection.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(AdvenHeader));
+    advenSection.appendChild(advnMovieSec);
+
+
+
+
+
+    const oldComTemplate = document.getElementById('ComicSection');
+    oldComTemplate.innerHTML = ''; // removing old template
+
+    const comicHeader = `<h4 id="collectionMovies" class="pt-2">Comic Movies</h4>`;
+    const collComTemplate = `<div class="CollectionMoviesContainer row" id="comicMovieSec">
+        </div>`;
+
+    const comicTempate = GenerateTemplateUtil.createAllChildHTMLElement(collComTemplate);
+    const comicMovieSec = comicTempate.querySelector('#comicMovieSec');
+    state.ComicList.forEach((movie) => {
+        comicMovieSec.appendChild(this.createCardElement(movie, "Comic"));
+    });
+    comicMovieSec.appendChild(GenerateStaticContent.createModelTemplate());
+    const comicSection = document.getElementById('ComicSection');
+    comicSection.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(comicHeader));
+    comicSection.appendChild(comicMovieSec);
   }
 }

@@ -1,8 +1,10 @@
-export default class HeaderService {
-  static displayAllSearchedResult() {
+export default class HeaderService 
+{
+  static displayAllSearchedResult(pageNumber) {
+
     const searchvalue = document.getElementById('searchBar').value;
     const searchurl1 = 'https://api.themoviedb.org/3/search/movie?api_key=aef122b97215b0783d385328924c3a26&language=en-US&query=';
-    const searchurl2 = '&page=1&include_adult=false';
+    const searchurl2 = '&page='.concat(pageNumber).concat('&include_adult=false');
     const finalSearchUrl = searchurl1.concat(searchvalue).concat(searchurl2);
     console.log(`Composed finalSearchUrl: ${finalSearchUrl}`);
 

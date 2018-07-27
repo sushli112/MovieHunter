@@ -15,11 +15,12 @@ export default class PopularListController {
     document.cookie = `pageNUmber=${pageNUmber}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
     const moviesList = PopularListService.getPopularMovies(pageNUmber);
     store.subscribe(() => {
-      const state = store.getState();
-      console.log(`state found:${state}`);
-      if (state.identifier === 'popular') {
-        this.popularView.createPopularSectionmoviesList(state.PopularList);
-      }
+      let state = store.getState();
+        let upperBody = document.getElementById("upperBody");
+        upperBody.innerHTML ="";
+        console.log("popularList from state: "+state.PopularList);
+        PopularListView.createPopularSectionmoviesList(state.PopularList);
+      
     });
     moviesList.then((movieList) => {
       console.log(`PopularListController : displayPopularMovies() :moviesList :${movieList}`);

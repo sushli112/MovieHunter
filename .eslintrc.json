@@ -4,7 +4,8 @@
         "document": false
       },
       "env":{
-          "browser":  true
+          "browser":  true,
+          "jquery":true
       }
 
 }

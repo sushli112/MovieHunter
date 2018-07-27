@@ -20,6 +20,13 @@
       "overview": "Dracula, Mavis, Johnny and the rest of the Drac Pack take a vacation on a luxury Monster Cruise Ship, where Dr",
       "release_date": "2018-06-30",
       "id": 5
+    },
+    {
+      "title": "Mission: Impossible - Ghost Protocol",
+      "poster_path": "/s58mMsgIVOFfoXPtwPWJ3hDYpXf.jpg",
+      "overview": "Ethan Hunt and his team are racing against time to track down a dangerous terrorist named Hendricks, who has g",
+      "release_date": "2011-12-07",
+      "id": 6
     }
   ],
   "Adventure": [
@@ -31,48 +38,48 @@
       "id": 9
     },
     {
-      "title": "Skyscraper",
-      "poster_path": "/5LYSsOPzuP13201qSzMjNxi8FxN.jpg",
-      "overview": "Framed and on the run, a former FBI agent must save his family from a blazing fire in the world's tallest buil",
-      "release_date": "2018-07-11",
-      "id": 10
-    },
-    {
       "title": "Qayamat: City Under Threat",
       "poster_path": "/e6n3Tf86MJgqtF34bLogGOpkNQf.jpg",
       "overview": "CBI Officer Akram Sheikh (Sunil Shetty) is on the verge of nabbing three dreaded Pakistan-backed arms dealers ",
       "release_date": "2003-07-11",
       "id": 11
-    }
-  ],
-  "Comic": [
-    {
-      "title": "The Purge: Election Year",
-      "poster_path": "/bjOJFjUffRZQpNQ9g3yvc9F6LBM.jpg",
-      "overview": "A harmless game of \"Truth or Dare\" among friends turns deadly when someone—or something—begins to punish those who tell a lie—or refuse the dare.",
-      "release_date": "2018-04-12",
-      "id": 3
     },
     {
       "title": "Jurassic World: Fallen Kingdom",
       "poster_path": "/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg",
       "overview": "Several years after the demise of Jurassic World, a volcanic eruption threatens the remaining dinosaurs on the",
       "release_date": "2018-06-06",
-      "id": 5
+      "id": 12
+    },
+    {
+      "title": "LEGO Marvel Super Heroes - Guardians of the Galaxy: The Thanos Threat",
+      "poster_path": "/e5h1RlnQzjgEAh4s96k50S8XkKa.jpg",
+      "overview": "Lego Marvel Super Heroes - Guardians of the Galaxy: The Thanos Threat is a computer-animated Lego film based o",
+      "release_date": "2017-12-09",
+      "id": 13
+    }
+  ],
+  "Comic": [
+    {
+      "title": "Black Panther",
+      "poster_path": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+      "overview": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda t",
+      "release_date": "2018-02-13",
+      "id": 1
+    },
+    {
+      "title": "Insurgent",
+      "poster_path": "/6w1VjTPTjTaA5oNvsAg0y4H6bou.jpg",
+      "overview": "Beatrice Prior must confront her inner demons and continue her fight against a powerful alliance which threate",
+      "release_date": "2015-03-18",
+      "id": 2
     },
     {
       "title": "Galaxy Quest",
       "poster_path": "/ahpUPhVlwAWic9N0SfNkxs8e66W.jpg",
       "overview": "The stars of a 1970s sci-fi show - now scraping a living through re-runs and sci-fi conventions - are beamed a",
       "release_date": "1999-12-23",
-      "id": 6
-    },
-    {
-      "title": "Guardians of the Galaxy",
-      "poster_path": "/y31QB9kn3XSudA15tV7UWQ9XLuW.jpg",
-      "overview": "Light years from Earth, 26 years after being abducted, Peter Quill finds himself the prime target of a manhunt",
-      "release_date": "2014-07-30",
-      "id": 7
+      "id": 3
     }
   ]
 }

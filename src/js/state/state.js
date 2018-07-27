@@ -6,15 +6,7 @@ const state = {
   ActionList: [],
   AdventureList: [],
   ComicList: [],
-  SearchedList: [],
-  identifier: 'popular',
+  SearchedList: []
 };
 export const store = createStore(Reducer, state);
 
-
-// //Actions
-// document.getElementById("actionLink").addEventListener('click',function(){
-//     store.dispatch({
-//         type:'ACTION_LIST'
-//     })
-// })

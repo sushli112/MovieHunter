@@ -7,6 +7,7 @@ export default class CollectionController {
   constructor() {
     this.collectionView = new CollectionView();
     this.generateTemplateUtil = new GenerateTemplateUtil();
+    this.intervalId = 0;
   }
 
   createCollectionList() {
@@ -30,12 +31,9 @@ export default class CollectionController {
 
     store.subscribe(() => {
       const state = store.getState();
-      if (state.identifier === 'dispaction' || state.identifier === 'removefromaction') {
         const count = 4;
         let actionListHtml = '';
-        while (actionId.firstChild) {
-          actionId.removeChild(actionId.firstChild);
-        }
+        actionId.innerHTML="";
         let arrlength = state.ActionList.length;
         if (count < arrlength) {
           arrlength = count;
@@ -46,7 +44,6 @@ export default class CollectionController {
             .createCollListElement(state.ActionList[i], actionListHtml);
         }
         actionId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(actionListHtml));
-      }
     });
 
     actionList.then((actionsList) => {
@@ -66,10 +63,7 @@ export default class CollectionController {
 
     store.subscribe(() => {
       const state = store.getState();
-      if (state.identifier === 'dispadventure' || state.identifier === 'removefromadventure') {
-        while (adventureId.firstChild) {
-          adventureId.removeChild(adventureId.firstChild);
-        }
+      adventureId.innerHTML="";
         let adventureListHtml = '';
         const count = 4;
         let arrlength = state.AdventureList.length;
@@ -82,7 +76,7 @@ export default class CollectionController {
             .createCollListElement(state.AdventureList[i], adventureListHtml);
         }
         adventureId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(adventureListHtml));
-      }
+      
     });
 
     adventureList.then((adventuresList) => {
@@ -97,12 +91,9 @@ export default class CollectionController {
 
     store.subscribe(() => {
       const state = store.getState();
-      if (state.identifier === 'dispcomic' || state.identifier === 'removefromcomic') {
         const count = 4;
         let comicListHtml = '';
-        while (comicId.firstChild) {
-          comicId.removeChild(comicId.firstChild);
-        }
+        comicId.innerHTML="";
         let arrlength = state.ComicList.length;
         if (count < arrlength) {
           arrlength = count;
@@ -113,7 +104,7 @@ export default class CollectionController {
             .createCollListElement(state.ComicList[i], comicListHtml);
         }
         comicId.appendChild(GenerateTemplateUtil.createAllChildHTMLElement(comicListHtml));
-      }
+      
     });
 
     comicList.then((comicsList) => {
@@ -130,15 +121,25 @@ export default class CollectionController {
   createEventOnCollectionClick() {
     let moviesList = null;
     const self = this;
-    const actionLink = document.getElementById('actionLink');
-    actionLink.addEventListener('click', () => {
-      store.subscribe(() => {
+
+    store.subscribe(() => {
         const state = store.getState();
         console.log(`CollectionController: ActionList list from current state found:${state.ActionList}`);
-        if (state.identifier === 'action' || state.identifier === 'removefromaction') {
-          self.collectionView.createCollectionSectionmoviesList(state.ActionList, 'Action');
-        }
+          self.collectionView.createCollectionSectionmoviesList(state);
       });
+
+
+    let actionSecId = document.getElementById("ActionSection") ;
+    let advenSecId = document.getElementById("AdventureSection");
+    let comicSecId = document.getElementById("ComicSection");
+
+    const actionLink = document.getElementById('actionLink');
+    actionLink.addEventListener('click', () => {
+      
+       actionSecId.style.display = "block";
+       advenSecId.style.display = "none";
+       comicSecId.style.display = "none";
+
       moviesList = CollectionService.getDataFromServer('action');
       moviesList.then((movieList) => {
         console.log(`CollectionController : createEventOnCollectionClick() :moviesList :${movieList}`);
@@ -149,23 +150,15 @@ export default class CollectionController {
           },
         );
       });
-
-      // let previous = document.getElementById("previous");
-      // previous.style.display="none";
-      // let previous = document.getElementById("next");
-      // previous.style.display="none";
+      document.documentElement.scrollTop = 0;
     }, false);
+
     const adventureLink = document.getElementById('adventureLink');
     adventureLink.addEventListener('click', () => {
-      store.subscribe(() => {
-        const state = store.getState();
-        console.log(`CollectionController:adventure list from current state found:${state.AdventureList}`);
-        if (state.identifier === 'adventure' || state.identifier === 'removefromadventure') {
-          self.collectionView.createCollectionSectionmoviesList(state.AdventureList, 'Adventure');
-        }
-      });
+        actionSecId.style.display = "none";
+        advenSecId.style.display = "block";
+        comicSecId.style.display ="none";
       moviesList = CollectionService.getDataFromServer('adventure');
-
       moviesList.then((movieList) => {
         console.log(`CollectionController : createEventOnCollectionClick() :moviesList :${movieList}`);
         store.dispatch(
@@ -175,16 +168,14 @@ export default class CollectionController {
           },
         );
       });
+      document.documentElement.scrollTop = 0;
     }, false);
     const comicLink = document.getElementById('comicLink');
     comicLink.addEventListener('click', () => {
-      store.subscribe(() => {
-        const state = store.getState();
-        console.log(`CollectionController:comic list from current state found::${state.ComicList}`);
-        if (state.identifier === 'comic' || state.identifier === 'removefromcomic') {
-          self.collectionView.createCollectionSectionmoviesList(state.ComicList, 'Comic');
-        }
-      });
+        actionSecId.style.display ="none";
+        advenSecId.style.display = "none";
+        comicSecId.style.display = "block";
+
       moviesList = CollectionService.getDataFromServer('comic');
       moviesList.then((movieList) => {
         console.log(`CollectionController : createEventOnCollectionClick() :moviesList :${movieList}`);
@@ -195,6 +186,8 @@ export default class CollectionController {
           },
         );
       });
+      document.documentElement.scrollTop = 0;
     }, false);
-  }
+  }   
+
 }
